@@ -1,14 +1,20 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Product/>
+    <ProductReview />
   </div>
 </template>
 
 <script>
+import Product from './components/Product.vue'
+import ProductReview from './components/ProductReview.vue'
+
 export default {
   name: 'App',
   components: {
+    Product,
+    ProductReview,
   },
   data() {
     return{
