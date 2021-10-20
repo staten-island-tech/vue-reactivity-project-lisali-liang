@@ -1,24 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Product/>
-    <ProductReview />
+    <h1>shopping site</h1>
+    <h1>{{text}}</h1>
+    <div class="item item-one">
+      
+    </div>
   </div>
 </template>
 
 <script>
-import Product from './components/Product.vue'
-import ProductReview from './components/ProductReview.vue'
-
 export default {
   name: 'App',
   components: {
-    Product,
-    ProductReview,
+    
   },
   data() {
     return{
-
+      text:"text"
     }
   }
 }
