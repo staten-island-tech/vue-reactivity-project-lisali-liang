@@ -1,12 +1,18 @@
 <template>
   <div id="app">
-    <h1>shopping site</h1>
-    <h1>{{ text }}</h1>
+    <h1>shop</h1>
+
+    <img class="banner-image" :src="bannerImage" alt="Banner" />
     <div class="item item-one">
-      <h1>This is an item</h1>
-      <img :src="image" />
-      <p v-if="inventory > 50">In Stock</p>
-      <p v-else>Out of Stock</p>
+      <img class="product-image" :src="imageOne" alt="Image One" />
+      <div class="item-details">
+        <h1>This is an item</h1>
+        <p v-if="inventory > 50">In Stock</p>
+        <p v-else>Out of Stock</p>
+        <ul>
+          <li v-for="detail in details" :key="detail">{{ detail }}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -18,22 +24,47 @@ export default {
   data() {
     return {
       text: "text",
-      image:
-        "https://images.unsplash.com/photo-1514897575457-c4db467cf78e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
+      bannerImage:
+        "https://images.unsplash.com/photo-1546213290-e1b492ab3eee?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80",
+      imageOne:
+        "https://images.unsplash.com/photo-1564859227552-81fde4a1df0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHQlMjBzaGlydHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
       inventory: 100,
-      details: [],
+      details: ["80% cotton", "20% polyester", "Gender-neutral"],
     };
   },
 };
 </script>
 
 <style>
+:root {
+  --image-size: 400px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+  max-width: 100vw;
+}
+
+div {
+  margin: 50px;
+}
+
+.item {
+  display: flex;
+}
+
+.banner-image {
+  width: 90vw;
+  height: auto;
+}
+
+.product-image {
+  height: var(--image-size);
+  width: var(--image-size);
 }
 </style>
