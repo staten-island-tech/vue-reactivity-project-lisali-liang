@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <h1>shop</h1>
+    <h1 class="name">meilleur avant</h1>
+    <div class="navigation">
+      <h3>women</h3>
+      <h3>men</h3>
+      <h3>accessories</h3>
+    </div>
 
     <img class="banner-image" :src="bannerImage" alt="Banner" />
     <div class="item item-one">
@@ -40,18 +45,33 @@ export default {
   --image-size: 400px;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Cardo:wght@700&display=swap");
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Cardo", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #001326;
   margin: 0;
   max-width: 100vw;
 }
 
 div {
   margin: 50px;
+}
+
+.name {
+  font-size: 40px;
+  letter-spacing: 25px;
+  /* background-color: blue; */
+}
+
+.navigation {
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
 }
 
 .item {
