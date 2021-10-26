@@ -6,6 +6,7 @@
       <h3>men</h3>
       <h3>accessories</h3>
     </div>
+    <WomenSection />
 
     <img class="banner-image" :src="bannerImage" alt="Banner" />
     <div class="item item-one">
@@ -23,9 +24,11 @@
 </template>
 
 <script>
+import WomenSection from "./womenSection.vue";
+
 export default {
   name: "App",
-  components: {},
+  components: { WomenSection },
   data() {
     return {
       text: "text",
@@ -35,6 +38,7 @@ export default {
         "https://images.unsplash.com/photo-1564859227552-81fde4a1df0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHQlMjBzaGlydHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
       inventory: 100,
       details: ["80% cotton", "20% polyester", "Gender-neutral"],
+      moreInfo: ["Store Locator", "Submit Feedback", "Buy Gift Card"],
     };
   },
 };
