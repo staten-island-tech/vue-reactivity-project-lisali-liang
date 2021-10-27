@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <h1 class="name">meilleur avant</h1>
-    <div class="navigation">
-      <h3>women</h3>
-      <h3>men</h3>
-      <h3>accessories</h3>
+    <h1 class="name">Lorem ipsum dolor</h1>
+
+    <div class="navigation" v-for="page in pages" :key="page.pageName">
+      <h3 class="section" @click="updatePage(page.pageSpecific)">
+        {{ page.pageName }}
+      </h3>
     </div>
-    <WomenSection />
 
     <img class="banner-image" :src="bannerImage" alt="Banner" />
     <div class="item item-one">
@@ -24,11 +24,9 @@
 </template>
 
 <script>
-import WomenSection from "./womenSection.vue";
-
 export default {
   name: "App",
-  components: { WomenSection },
+  components: {},
   data() {
     return {
       text: "text",
@@ -39,7 +37,29 @@ export default {
       inventory: 100,
       details: ["80% cotton", "20% polyester", "Gender-neutral"],
       moreInfo: ["Store Locator", "Submit Feedback", "Buy Gift Card"],
+      wHidden: true,
+
+      pages: [
+        {
+          pageName: "womens",
+          pageSpecific: "./womenSection.vue",
+        },
+        {
+          pageName: "mens",
+        },
+        {
+          pageName: "accessories",
+        },
+      ],
     };
+  },
+  methods: {
+    write() {
+      console.log("text is being logged");
+    },
+    updatePage(pageSpecific) {
+      this.page = pageSpecific;
+    },
   },
 };
 </script>
@@ -72,10 +92,15 @@ div {
 }
 
 .navigation {
-  /* background-color: red; */
+  background-color: red;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin: 0;
+}
+
+.section {
+  background-color: blue;
+  width: 10pc;
 }
 
 .item {
