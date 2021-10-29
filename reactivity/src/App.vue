@@ -16,6 +16,13 @@
     <img class="banner-image" :src="bannerImage" alt="Banner" />
 
     <wSection></wSection>
+
+    <button v-on:click="addToCart">add button</button>
+    <button v-on:click="removeFromCart">remove button</button>
+
+    <div class="cart">
+      <p>Cart {{ cart }}</p>
+    </div>
   </div>
 </template>
 
@@ -35,6 +42,8 @@ export default {
 
       moreInfo: ["Store Locator", "Submit Feedback", "Buy Gift Card"],
       wHidden: true,
+
+      cart: 0,
 
       pages: [
         {
@@ -57,13 +66,21 @@ export default {
     updatePage(pageSpecific) {
       this.page = pageSpecific;
     },
+    addToCart() {
+      this.cart += 1;
+    },
+    removeFromCart() {
+      if (this.cart > 0) {
+        this.cart -= 1;
+      }
+    },
   },
 };
 </script>
 
 <style>
 :root {
-  --image-size: 400px;
+  --image-size: 250px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Cardo:wght@700&display=swap");

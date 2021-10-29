@@ -3,37 +3,16 @@
     <h1>womens section</h1>
 
     <div class="items">
-      <h1>text</h1>
-      <h1>text</h1>
-      <h1>text</h1>
       <div class="item item-one">
-        <div class="item-details">
-          <div class="item-names">
-            <h1 v-for="item in items" :key="item.itemName">
-              {{ item.itemName }}
-            </h1>
-          </div>
-
-          <div
-            class="item-inventory"
-            v-for="item in items"
-            :key="item.inventory"
-          >
-            <div class="inventory-details">
-              <p v-if="item.inventory > 50">In Stock</p>
-              <p v-else>Out of Stock</p>
-            </div>
-          </div>
-
-          <div class="item-details" v-for="item in items" :key="item.details">
-            <ul>
-              <li v-for="detail in item.details" :key="detail">{{ detail }}</li>
-            </ul>
-          </div>
-
+        <div class="each-item" v-for="item in items" :key="item">
+          <h1>{{ item.itemName }}</h1>
+          <img class="product-image" :src="item.itemImage" alt="item image" />
+          <p v-if="item.inventory > 50">In Stock</p>
+          <p v-else>Out of Stock</p>
           <ul>
-            <li v-for="detail in details" :key="detail">{{ detail }}</li>
+            <li v-for="detail in item.details" :key="detail">{{ detail }}</li>
           </ul>
+          <button>add to cart</button>
         </div>
       </div>
     </div>
@@ -48,21 +27,46 @@ export default {
     return {
       items: [
         {
-          itemName: "shirt one",
+          itemName: "item one",
           inventory: 10,
           details: ["80% cotton", "20% polyester", "Gender-neutral"],
           itemImage:
             "https://images.unsplash.com/photo-1564859227552-81fde4a1df0b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHQlMjBzaGlydHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
         },
         {
-          itemName: "shirt two",
+          itemName: "item two",
           inventory: 500,
           details: ["20% polyester", "Gender-neutral"],
           itemImage:
-            "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=705&q=80",
+            "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1469&q=80",
+        },
+        {
+          itemName: "item three",
+          inventory: 25,
+          details: ["85% cotton", "15% polyester", "Gender-neutral"],
+          itemImage:
+            "https://images.unsplash.com/photo-1607160199580-1b0c9b736b66?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
+        },
+        {
+          itemName: "item four",
+          inventory: 25,
+          details: ["85% cotton", "15% polyester", "Gender-neutral"],
+          itemImage:
+            "https://images.unsplash.com/photo-1607160199580-1b0c9b736b66?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
+        },
+        {
+          itemName: "item five",
+          inventory: 205,
+          details: ["85% cotton", "15% polyester", "Gender-neutral"],
+          itemImage:
+            "https://images.unsplash.com/photo-1607160199580-1b0c9b736b66?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
         },
       ],
     };
+  },
+
+  methods: {
+    addToCart: function() {},
   },
 };
 </script>
@@ -74,7 +78,8 @@ export default {
 .item {
   display: flex;
   justify-content: space-around;
-  background-color: blue;
+  flex-wrap: wrap;
+  background-color: lightblue;
 }
 
 .item-names {
