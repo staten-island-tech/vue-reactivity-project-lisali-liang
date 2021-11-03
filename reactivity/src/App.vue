@@ -196,6 +196,9 @@ h3 {
   font-size: 40px;
   letter-spacing: 25px;
 }
+.name:hover {
+  text-decoration: underline;
+}
 
 .navigation {
   margin: 0;
