@@ -1,4 +1,5 @@
 <template>
+  <!-- realtakai -->
   <div id="app">
     <div class="header">
       <div class="header-content">

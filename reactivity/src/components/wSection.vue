@@ -71,7 +71,7 @@ export default {
           itemName: "MA NO. 532 REFLECTIVE SHIRT",
           itemID: 532,
           inventory: 500,
-          details: ["20% polyester", "Gender-neutral"],
+          details: ["M/L/XL", "WHITE/BLACK"],
           coverImage: {
             backgroundImage:
               "url(https://cdn.shopify.com/s/files/1/0236/8779/0656/products/O1CN01oXbOxc1CJykeeHUPf__39600061_1080x.jpg?v=1588387196)",
