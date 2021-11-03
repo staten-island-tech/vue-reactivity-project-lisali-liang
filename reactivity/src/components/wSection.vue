@@ -296,10 +296,6 @@ button {
   text-transform: uppercase;
 }
 
-.button:hover {
-  text-decoration: underline;
-}
-
 .add {
   background-color: rgb(4, 0, 37);
   color: white;

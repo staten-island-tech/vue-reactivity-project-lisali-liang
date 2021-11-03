@@ -47,7 +47,9 @@
               <p class="list-item">No. {{ cartItems }}</p>
             </div>
           </div>
-          <button @click="confirm">Confirm</button>
+          <button class="confirm-button" @click="confirm">
+            <p class="button-text">Confirm</p>
+          </button>
         </div>
       </div>
     </div>
@@ -247,5 +249,17 @@ button {
   text-transform: uppercase;
   background-color: white;
   color: black;
+  overflow: hidden;
+  position: relative;
+}
+
+.confirm-button {
+  width: 120px;
+}
+.button-text {
+  margin: 0;
+}
+.confirm-button:hover .button-text {
+  letter-spacing: 1px;
 }
 </style>
