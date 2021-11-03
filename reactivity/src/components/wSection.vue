@@ -294,6 +294,7 @@ button {
   font-size: 13px;
   border-radius: 4px;
   text-transform: uppercase;
+  text-decoration: underline;
 }
 
 .add {
